@@ -1,2 +1,3 @@
 this is to test if I can push using my IDE and github desktop :)
 jan 8th
+react native and dependencies added versions for tom's machine   npm: '8.15.0', node v16.17.0,  react "^18.2.0",
