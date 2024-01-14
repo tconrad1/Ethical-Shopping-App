@@ -1,61 +1,41 @@
+import React, { useState } from 'react';
+import { Text, TextInput, View } from 'react-native';
 
-import './App.css';
-import { useState } from 'react';
-import React from 'react';
-import {Text, TextInput, View} from 'react-native';
-
-
-
-const companyArray = [ ['nestle', 'evil'], ['other', 'ok']
-];
+const companyArray = [['nestle', 'evil'], ['other', 'ok']];
 
 export function MainInput() {
-   const [Company, setCompany] = useState('');
-   var out = '';
+  const [company, setCompany] = useState('');
+  let out = '';
 
-   let i = 0;
-   while (i<companyArray.length){
-    if(companyArray[i][0] == Company){
-     out = Company + " " + companyArray[i][1];
+  let i = 0;
+  while (i < companyArray.length) {
+    if (companyArray[i][0] === company) {
+      out = company + ' ' + companyArray[i][1];
     }
-    i+=1;
-   }
-
+    i += 1;
+  }
 
   return (
-    <>
-    <label>
-    Company/Product:
-    <TextInput 
-    value= {Company}
-    onChangeText= { Company=> {setCompany(Company)}}
-    
-    
-    />
-    
-    </label>
-    <br></br>
-    { out != '' && <a>
-      Ethical Concerns:  {out} </a>}
-
-     
-    </>
-
-
-
-
+    <View>
+      <Text>Company/Product:</Text>
+      <TextInput
+        value={company}
+        onChangeText={(text) => setCompany(text)}
+      />
+      {out !== '' && (
+        <Text>
+          Ethical Concerns: {out}
+        </Text>
+      )}
+    </View>
   );
 }
 
-
-
 function App() {
   return (
-   <div >
-      
-    {MainInput()}
-    </div>
-    
+    <View>
+      <MainInput />
+    </View>
   );
 }
 
