@@ -1,3 +1,5 @@
 this is to test if I can push using my IDE and github desktop :)
 jan 8th
 react native and dependencies added versions for tom's machine   npm: '8.15.0', node v16.17.0,  react "^18.2.0",
+we are using node v20.11.0, java 18.0.2+9-61, gradle 8.5  as of jan 14th 
+rough code currently broken as a result of the different enviroment, but the emulator does work

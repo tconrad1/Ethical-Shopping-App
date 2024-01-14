@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "android",
+			"path": "cons",
+			"problemMatcher": [],
+			"label": "npm: android - cons",
+			"detail": "react-native run-android"
+		}
+	]
+}
