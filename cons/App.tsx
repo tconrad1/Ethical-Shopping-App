@@ -4,13 +4,25 @@ import * as React from 'react-native'
 import {Text, View, TouchableOpacity, TextInput} from 'react-native'
 import {textS} from './Styles.js'
 
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, RouteProp} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
+
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'; 
 //2D array used to display text
 const companyArray = [['nestle', 'evil'], ['other', 'ok']];
 
 const Stack = createNativeStackNavigator();
+
+type RootStackParamList = {
+  Ethical: undefined;
+  Unethical: undefined;
+};
+type EthicalScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Ethical'>;
+type UnethicalScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Unethical'>;
+
+type EthicalScreenRouteProp = RouteProp<RootStackParamList, 'Ethical'>;
+type UnethicalScreenRouteProp = RouteProp<RootStackParamList, 'Unethical'>;
 
 /* This is the actual stuff that is appearing on the screen lol*/
 export default function App() {
@@ -30,14 +42,14 @@ export default function App() {
 }
 
 /* This is what will be on the Unethical Information Screen */
-function UnethicalScreen({navigation}) {
+function UnethicalScreen({ navigation }: { navigation: UnethicalScreenNavigationProp }) {
   return (
     <View style={{alignItems: 'center', backgroundColor: '#FAF5F3'}}>
       <SearchEntryText/>
       <CompanyNameText/>
       
       
-      <Text> <br></br> <br></br> <br></br> </Text>
+      <Text> {'\n'}{'\n'}{'\n'} </Text>
       <Text>
         <Text style={textS.label}>Sadly, </Text>
         <Text style={textS.tempText}>[company name]</Text>
@@ -45,7 +57,7 @@ function UnethicalScreen({navigation}) {
       </Text>
  
       <Text style={textS.smallText}>Try looking for an alternative from another brand. </Text>
-      <Text> <br></br><br></br> </Text>
+      <Text> {'\n'}{'\n'} </Text>
 
       <TouchableOpacity
         style={textS.buttonStyle}
@@ -66,13 +78,13 @@ function UnethicalScreen({navigation}) {
 };
 
 /* This is what will be on the Ethical Information Screen */
-function EthicalScreen({navigation}) {
+function EthicalScreen({ navigation }: { navigation: EthicalScreenNavigationProp }) {
   return (
     <View style={{alignItems: 'center', backgroundColor: '#FAF5F3'}}>
       <SearchEntryText/>
       <CompanyNameText/>
       
-      <Text> <br></br> <br></br> <br></br> </Text>
+      <Text> {'\n'} </Text>
       <Text>
         <Text style={textS.tempText}>[company name]</Text>
         <Text style={textS.label}> has no record of child labor! </Text>
@@ -80,7 +92,7 @@ function EthicalScreen({navigation}) {
       
       <Text style={textS.smallText}> Happy Ethical Shopping! </Text>
       <Text> :) </Text>
-      <Text> <br></br> </Text>
+      <Text> {'\n'}</Text>
 
       <TouchableOpacity
         style={textS.buttonStyle}
