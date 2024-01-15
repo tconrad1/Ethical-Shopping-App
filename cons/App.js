@@ -7,7 +7,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 // imports for Tom search bar
-import './App.css';
 import { useState } from 'react';
 
 //2D array used to display text
@@ -57,7 +56,6 @@ function UnethicalScreen({navigation}) {
         }
       >
         <Text style={textS.buttonText}>go to Ethical Info</Text>
-
       </TouchableOpacity>
 
       <View>
