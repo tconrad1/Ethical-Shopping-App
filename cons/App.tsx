@@ -133,7 +133,12 @@ export const CompanyNameText = () => {
 }
 
 /* TOMS CODE FOR SEARCH BAR LOL */
-
+function equalish(input: string,  against: string){
+  if(against.length > 3 && input.indexOf(against) != -1){
+    return true;
+  }
+  return false;
+}
 // input and functionality for search bar 
 export function MainInput() {
   const [company, setCompany] = useState('');
@@ -141,8 +146,9 @@ export function MainInput() {
 
   let i = 0;
   while (i < companyArray.length) {
-    if (companyArray[i][0] === company) {
-      out = company + ' ' + companyArray[i][1];
+    if ((companyArray[i][0] === company) || equalish(companyArray[i][0],company)){
+      out = companyArray[i][0] + ' ' + companyArray[i][1];
+      break;
     }
     i += 1;
   }
