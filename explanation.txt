@@ -8,3 +8,10 @@ rough code currently broken as a result of the different enviroment, but the emu
 usefull cmd line stuff 
 react-native start
 npx react-native doctor 
+
+
+**tsconfig.json changes**
+theres a line commented out that broke my version but might work
+work on others, just uncomment that line and comment out the other one
+if thats the case. 
+i dont want to break the configs for anyone if it works with the other line lol 
