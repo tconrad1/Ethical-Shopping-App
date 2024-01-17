@@ -1,16 +1,30 @@
 import { useState } from 'react';
-import * as React from 'react-native'
+import * as React from 'react-native';
 
-import {Text, View, TouchableOpacity, TextInput} from 'react-native'
-import {Styles} from './Styles.js'
+import {Text, View, TouchableOpacity, TextInput} from 'react-native';
 
 import {NavigationContainer, RouteProp} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-import { NativeStackNavigationProp } from '@react-navigation/native-stack'; 
+import {Styles} from './Styles.js';
+import {SearchScreen} from './SearchScreen.js';
+
+// /* NAMED CONSTANTS FOR COMPANIES */ map experiment in progress :D
+// var NESTLE  = 1;
+// var OTHER = 2;
+
+// const companyMap = new Map();
+
+// // nestle will be key 1 and other will be key 2
+// companyMap.set('chocolate', NESTLE);
+// companyMap.set('other', OTHER);
+
+
 //2D array used to display text
 const companyArray = [['nestle', 'evil'], ['other', 'ok']];
+
 
 const Stack = createNativeStackNavigator();
 
@@ -29,14 +43,20 @@ type UnethicalScreenRouteProp = RouteProp<RootStackParamList, 'Unethical'>;
 type ErrorScreenRouteProp = RouteProp<RootStackParamList, 'Error'>;
 
 /* This is the actual stuff that is appearing on the screen lol*/
-export default function App() {
+export default function App(this: any) {
+  /* we can use ternary operator to switch screens depending on values 
+      so basically what it has now except instead of string literals as parameters 
+      the params will be the search entry and the thing from the array */
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        
-        <Stack.Screen name="Ethical" component={EthicalScreen} />
-        <Stack.Screen name="Unethical" component={UnethicalScreen} />
+        { equalish("oth", "other") ?  
+         <Stack.Screen name="Search" component={SearchScreen} /> : 
+        <Stack.Screen name="Ethical" component={EthicalScreen}/>}
+
         <Stack.Screen name="Error" component={ErrorScreen} />
+        <Stack.Screen name="Unethical" component={UnethicalScreen}/>
+        
 
       </Stack.Navigator>
     </NavigationContainer>
@@ -46,7 +66,7 @@ export default function App() {
 /* This is what will be on the Unethical Information Screen */
 function UnethicalScreen({ navigation }: { navigation: UnethicalScreenNavigationProp }) {
   return (
-    <View style={Styles.container}>
+    <View style={Styles.flexContainer}>
       <SearchEntryText/>
       <CompanyNameText/>
       
@@ -82,7 +102,7 @@ function UnethicalScreen({ navigation }: { navigation: UnethicalScreenNavigation
 /* This is what will be on the Ethical Information Screen */
 function EthicalScreen({ navigation }: { navigation: EthicalScreenNavigationProp }) {
   return (
-    <View style={Styles.container}>
+    <View style={Styles.flexContainer}>
       <SearchEntryText/>
       <CompanyNameText/>
       
@@ -106,12 +126,13 @@ function EthicalScreen({ navigation }: { navigation: EthicalScreenNavigationProp
 
       </TouchableOpacity>
     </View>
+
   );
 };
 
 function ErrorScreen ({ navigation }: { navigation: ErrorScreenNavigationProp }) {
   return (
-    <View style={Styles.container}>
+    <View style={Styles.flexContainer}>
       
       <Text style={Styles.errorText} >
         {'\n'}ERROR: YOUR SEARCH INQUIRY WAS NOT FOUND IN OUR DATABASE{'\n'}

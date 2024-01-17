@@ -1,7 +1,8 @@
 import {StyleSheet} from 'react-native';
 
 export const Styles = StyleSheet.create ({
-   container: {
+   // for kelsey info screens + error screen  
+   flexContainer: {
       alignItems: 'center', 
       backgroundColor: '#FAF5F3',
       flex: 1
@@ -51,4 +52,15 @@ export const Styles = StyleSheet.create ({
       textAlign: 'center',
       padding: 7
    },
+
+   // for bea search screen
+   searchBackground: {
+      backgroundColor: '#F8F0EC',
+      flex: 1,
+    },
+    searchTopBar: {
+      backgroundColor: '#2963AE',
+      width: 450,
+      height: 87,
+    }, 
 })
