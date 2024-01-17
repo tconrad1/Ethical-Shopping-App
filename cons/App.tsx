@@ -2,7 +2,7 @@ import { useState } from 'react';
 import * as React from 'react-native'
 
 import {Text, View, TouchableOpacity, TextInput} from 'react-native'
-import {textS} from './Styles.js'
+import {Styles} from './Styles.js'
 
 import {NavigationContainer, RouteProp} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -17,26 +17,28 @@ const Stack = createNativeStackNavigator();
 type RootStackParamList = {
   Ethical: undefined;
   Unethical: undefined;
+  Error: undefined;
 };
+
 type EthicalScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Ethical'>;
 type UnethicalScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Unethical'>;
+type ErrorScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Error'>;
 
 type EthicalScreenRouteProp = RouteProp<RootStackParamList, 'Ethical'>;
 type UnethicalScreenRouteProp = RouteProp<RootStackParamList, 'Unethical'>;
+type ErrorScreenRouteProp = RouteProp<RootStackParamList, 'Error'>;
 
 /* This is the actual stuff that is appearing on the screen lol*/
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
-          name="Ethical"
-          component={EthicalScreen}
-          options={{title: 'Ethical'}}
-        />
+        
+        <Stack.Screen name="Ethical" component={EthicalScreen} />
         <Stack.Screen name="Unethical" component={UnethicalScreen} />
+        <Stack.Screen name="Error" component={ErrorScreen} />
+
       </Stack.Navigator>
-      
     </NavigationContainer>
   );
 }
@@ -44,28 +46,28 @@ export default function App() {
 /* This is what will be on the Unethical Information Screen */
 function UnethicalScreen({ navigation }: { navigation: UnethicalScreenNavigationProp }) {
   return (
-    <View style={{alignItems: 'center', backgroundColor: '#FAF5F3'}}>
+    <View style={Styles.container}>
       <SearchEntryText/>
       <CompanyNameText/>
       
       
       <Text> {'\n'}{'\n'}{'\n'} </Text>
       <Text>
-        <Text style={textS.label}>Sadly, </Text>
-        <Text style={textS.tempText}>[company name]</Text>
-        <Text style={textS.label}> has a record of child labor! </Text>
+        <Text style={Styles.label}>Sadly, </Text>
+        <Text style={Styles.tempText}>[company name]</Text>
+        <Text style={Styles.label}> has a record of child labor! </Text>
       </Text>
  
-      <Text style={textS.smallText}>Try looking for an alternative from another brand. </Text>
+      <Text style={Styles.smallText}>Try looking for an alternative from another brand. </Text>
       <Text> {'\n'}{'\n'} </Text>
 
       <TouchableOpacity
-        style={textS.buttonStyle}
+        style={Styles.buttonStyle}
         onPress={() =>
           navigation.navigate('Ethical')
         }
       >
-        <Text style={textS.buttonText}>go to Ethical Info</Text>
+        <Text style={Styles.buttonText}>go to Ethical Info</Text>
       </TouchableOpacity>
 
       <View>
@@ -80,40 +82,64 @@ function UnethicalScreen({ navigation }: { navigation: UnethicalScreenNavigation
 /* This is what will be on the Ethical Information Screen */
 function EthicalScreen({ navigation }: { navigation: EthicalScreenNavigationProp }) {
   return (
-    <View style={{alignItems: 'center', backgroundColor: '#FAF5F3'}}>
+    <View style={Styles.container}>
       <SearchEntryText/>
       <CompanyNameText/>
       
       <Text> {'\n'} </Text>
       <Text>
-        <Text style={textS.tempText}>[company name]</Text>
-        <Text style={textS.label}> has no record of child labor! </Text>
+        <Text style={Styles.tempText}>[company name]</Text>
+        <Text style={Styles.label}> has no record of child labor! </Text>
       </Text>
       
-      <Text style={textS.smallText}> Happy Ethical Shopping! </Text>
+      <Text style={Styles.smallText}> Happy Ethical Shopping! </Text>
       <Text> :) </Text>
       <Text> {'\n'}</Text>
 
       <TouchableOpacity
-        style={textS.buttonStyle}
+        style={Styles.buttonStyle}
         onPress={() =>
           navigation.navigate('Unethical')
         }
       >
-        <Text style={textS.buttonText}>go to Unethical Info</Text>
+        <Text style={Styles.buttonText}>go to Unethical Info</Text>
 
       </TouchableOpacity>
     </View>
   );
 };
 
+function ErrorScreen ({ navigation }: { navigation: ErrorScreenNavigationProp }) {
+  return (
+    <View style={Styles.container}>
+      
+      <Text style={Styles.errorText} >
+        {'\n'}ERROR: YOUR SEARCH INQUIRY WAS NOT FOUND IN OUR DATABASE{'\n'}
+      </Text>
+      <Text style={Styles.label}>
+        {'\n'}Please try another inquiry :)
+      </Text>
+
+      <TouchableOpacity
+        style={Styles.buttonStyle}
+        onPress={() =>
+          navigation.navigate('Ethical')
+        }
+      >
+        <Text style={Styles.buttonText}>go to Ethical Info</Text>
+      </TouchableOpacity>
+      
+    </View>
+  );
+}
+
 /* Search Entry Text so we can use it in multiple places */
 export const SearchEntryText = () => {
   return (
       <View>
           <Text>
-              <Text style={textS.label}>Search Entry:      </Text>
-              <Text style={textS.tempText}>[text from search bar here]</Text>
+              <Text style={Styles.label}>Search Entry:      </Text>
+              <Text style={Styles.tempText}>[text from search bar here]</Text>
           </Text>
       </View>
   );
@@ -124,8 +150,8 @@ export const CompanyNameText = () => {
   return (
       <View>
           <Text>
-              <Text style={textS.label}>Company Name: </Text>
-              <Text style={textS.tempText}>[text from database here] </Text>
+              <Text style={Styles.label}>Company Name: </Text>
+              <Text style={Styles.tempText}>[text from database here] </Text>
           </Text>
 
       </View>
@@ -139,6 +165,7 @@ function equalish(input: string,  against: string){
   }
   return false;
 }
+
 // input and functionality for search bar 
 export function MainInput() {
   const [company, setCompany] = useState('');
@@ -155,14 +182,14 @@ export function MainInput() {
 
   return (
     <View>
-      <Text style={textS.smallText}>Company/Product:</Text>
+      <Text style={Styles.smallText}>Company/Product:</Text>
       <TextInput
         style={{backgroundColor: 'green'}}
         value={company}
         onChangeText={(text) => setCompany(text)}
       />
       {out !== '' && (
-        <Text style={textS.smallText}>
+        <Text style={Styles.smallText}>
           Ethical Concerns: {out}
         </Text>
       )}
