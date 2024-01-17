@@ -4,7 +4,7 @@ export const Styles = StyleSheet.create ({
    // for kelsey info screens + error screen  
    flexContainer: {
       alignItems: 'center', 
-      backgroundColor: '#FAF5F3',
+      backgroundColor: '#F8F0EC',
       flex: 1
    },
 
@@ -17,7 +17,6 @@ export const Styles = StyleSheet.create ({
    },
 
    smallText: {
-      fontFamily: 'Georgia',
       fontSize: 17,
       padding: 10,
       textAlign: 'center'
@@ -38,6 +37,8 @@ export const Styles = StyleSheet.create ({
    },
 
    buttonStyle: {
+      position: 'absolute',
+      bottom: 10,
       backgroundColor: "#00072D",
       borderRadius: 6,
       padding: 5,
@@ -46,7 +47,6 @@ export const Styles = StyleSheet.create ({
    },
 
    buttonText: {
-      fontFamily: 'Georgia',
       fontSize: 17,
       color: '#FAF5F3',
       textAlign: 'center',

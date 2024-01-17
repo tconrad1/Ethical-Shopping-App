@@ -1,12 +1,12 @@
 //News.js
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image, SafeAreaView, ScrollView, Linking } from 'react-native';
+import { View, Text, StyleSheet, Image, SafeAreaView, ScrollView, Linking } from 'react-native';
 
 export default function News() {
     return (
         <SafeAreaView>
             <ScrollView>
-                <View>
+                <View >
                     <Text style = {styles.Title}>
                         Relevant News
                     </Text>
