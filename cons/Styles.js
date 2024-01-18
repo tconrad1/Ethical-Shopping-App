@@ -52,6 +52,12 @@ export const Styles = StyleSheet.create ({
       textAlign: 'center',
       padding: 7
    },
+   appTitle: {
+      fontSize: 20,
+      fontStyle:'italic', 
+      fontWeight: 'bold', 
+      color: "#00072D",
+   },
 
    // for bea search screen
    searchBackground: {
