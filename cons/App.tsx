@@ -50,7 +50,7 @@ export default function App(this: any) {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        { equalish("otr", "other") ?  
+        { equalish("or", "other") ?  
           <Stack.Screen name="Search" component={SearchScreen} /> : 
           <Stack.Screen name="Ethical" component={EthicalScreen}/>}
 
