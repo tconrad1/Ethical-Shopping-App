@@ -2,7 +2,7 @@
   "compilerOptions": {
     "jsx": "react"
   },
-  "extends": "@tsconfig/react-native/tsconfig.json"
+//  "extends": "@tsconfig/react-native/tsconfig.json"
 
   /* not sure why but this line breaks the whole project for me
     comment or uncomment which ever line works on your device */
