@@ -8,7 +8,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-import { SearchScreen } from './search_components/search-results/SearchScreen.js';
+import {Styles} from './Styles.js';
+import SearchScreen  from './search_components/search-results/SearchScreen.js';
 import UnethicalScreen from './search_components/search-results/UnethicalScreen';
 import EthicalScreen from './search_components/search-results/EthicalScreen';
 import ErrorScreen from './search_components/search-results/ErrorScreen';
@@ -136,7 +137,13 @@ function MainScreen({ navigation }: { navigation: MainScreenNavigationProp }) {
 
 };
 
-
+export const WelcomeText = () => {
+  return (
+    <View>
+  <Text style={Styles.label}>  An App by group 2
+  </Text>
+    </View>
+  )};
 
 
 
