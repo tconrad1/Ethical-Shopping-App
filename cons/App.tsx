@@ -67,8 +67,7 @@ export default function App(this: any) {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name = "Start" component={StartScreen} options={{headerShown:false}} 
-      />
+        <Stack.Screen name = "Start" component={StartScreen} options={{headerShown:false}} />
         <Stack.Screen name = "MainScreen" component = {MainScreen} options={{title: "Search A Brand Name"}}/>
         <Stack.Screen name="Search" component={SearchScreen} />
         <Stack.Screen name="Ethical" component={EthicalScreen} />
@@ -76,25 +75,28 @@ export default function App(this: any) {
         <Stack.Screen name="Error" component={ErrorScreen} />
         <Stack.Screen name="Unethical" component={UnethicalScreen}  />
         
-  
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
 function StartScreen({navigation}: {navigation :StartScreenNavigationProp}){
   return (
-    <View style = {Styles.flexContainer}>
-      <Text style= {Styles.label} >
-        <Text style ={Styles.appTitle} > Cons </Text>
-          for Consumption 
-        {'\n'} {'\n'}
+    <View style = {Styles.startContainer}>
+      <Text style= {Styles.label} > 
 
-       <Text style= {Styles.smallText }> Your App for Ethical Consumption</Text>
-      {'\n'}
-      {'\n'}
-      {'\n'}
-      </Text>
+        <Text style ={Styles.appTitle} >Cons</Text>
+        {' '} for Consumption {'\n'}
+
+        <Text style= {Styles.smallText }> Your App for Ethical Consumption</Text>
+
+        {'\n'}
+        {'\n'}
+        {'\n'}
+    </Text>
+
       <WelcomeText/>
+      
       <TouchableOpacity
         style={Styles.buttonStyle}
         onPress={() =>

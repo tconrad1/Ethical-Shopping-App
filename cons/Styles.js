@@ -5,7 +5,14 @@ export const Styles = StyleSheet.create ({
    flexContainer: {
       alignItems: 'center', 
       backgroundColor: '#F8F0EC',
-      flex: 1
+      flex: 1,
+   },
+
+   startContainer: {
+      alignItems: 'center', 
+      backgroundColor: '#F8F0EC',
+      flex: 1,
+      justifyContent: 'center'
    },
 
    label: {
@@ -52,11 +59,14 @@ export const Styles = StyleSheet.create ({
       textAlign: 'center',
       padding: 7
    },
+
+   // for tom start screen
    appTitle: {
-      fontSize: 20,
-      fontStyle:'italic', 
+      fontSize: 50,
+      fontStyle:'italic',
       fontWeight: 'bold', 
-      color: "#00072D",
+      color: "#2963AE",
+      textDecorationLine: 'underline'
    },
 
    // for bea search screen
