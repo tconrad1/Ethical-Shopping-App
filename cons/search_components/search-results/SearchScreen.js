@@ -1,11 +1,11 @@
 import React from 'react';
-import { View,SafeAreaView, ScrollView } from 'react-native';
-import SearchBar from './search_components/SearchBar';
-import News from './search_components/News';
+import { View, SafeAreaView, ScrollView } from 'react-native';
+
+import SearchBar from '../BeasSearchBar.js';
+import News from '../News.js';
 import { Styles } from './Styles';
 
-
-export function SearchScreen() {
+export default function SearchScreen() {
   return (
     <SafeAreaView>
       <ScrollView>
