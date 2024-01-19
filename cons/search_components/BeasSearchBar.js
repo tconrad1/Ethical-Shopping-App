@@ -1,24 +1,34 @@
-//SearchBar.js
-import React from 'react';
-import { View, TextInput, StyleSheet } from 'react-native';
+//BeasSearchBar.js
+import React, {useState} from 'react';
+import { View, TextInput, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 export default function SearchBar() {
   const navigation = useNavigation();
+  const [searchEntry, setSearchEntry] = useState('');
 
-  const handleSearch = (searchEntry) => {
-    navigation.navigate('SearchResults', { searchEntry });
+  const handleSearch = () => {
+    navigation.navigate('SearchResultsScreen',{ searchEntry });
   };
 
   return (
-    <View style={styles.assembler}>
-      <View style={styles.SearchBar}>
+    <View style = {styles.assembler}>
+      <View style = {styles.SearchBar}>
         <TextInput
-          style={styles.Input}
-          placeholder="Search cons"
-          onSubmitEditing={(event) => handleSearch(event.nativeEvent.text)}
+          style = {styles.Input}
+          placeholder = "Search cons"
+          value = {searchEntry}
+          onChangeText = {(text) => setSearchEntry(text)}
         />
       </View>
+      <TouchableOpacity 
+        style = {styles.SearchButton}
+        onPress = {handleSearch}
+        >
+        <Image 
+          style = {styles.SearchIcon}
+          source = {require('./Images/Search-Icon.png')} />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -26,21 +36,31 @@ export default function SearchBar() {
 const styles = StyleSheet.create({
   assembler: {
     flexDirection: 'row',
+    marginTop: 20
   },
   SearchBar: {
     backgroundColor: '#FFF',
-    width: 372,
+    width: 320,
     height: 45,
     borderWidth: 1,
     borderColor: '#FFF',
-    borderTopLeftRadius: 50,
-    borderTopRightRadius: 50,
-    borderBottomLeftRadius: 50,
-    borderBottomRightRadius: 50,
+    borderTopLeftRadius: 45,
+    borderBottomLeftRadius: 45,
     marginLeft: 20,
-    marginTop: 20,
   },
   Input: {
     marginLeft: 25,
+    fontSize: 15
   },
+  SearchButton: {
+    backgroundColor: '#FFF',
+    width: 52,
+    height: 45,
+    borderTopRightRadius: 45,
+    borderBottomRightRadius: 45,
+  },
+  SearchIcon: {
+    marginTop: 7,
+    marginLeft: 10
+  }
 });
