@@ -1,10 +1,10 @@
-// Drumstick.js
+
 import React from 'react';
 import { View, TouchableOpacity, Text, Image } from 'react-native';
 
 import { Styles } from '../../Styles';
 
-const KitKat = ({ navigation }) => {
+const AfterEight = ({ navigation }) => {
     const handleProductPress = () => {
       navigation.navigate('NestleInfoScreen', { searchEntry: 'Nestle' });
     };
@@ -15,7 +15,7 @@ const KitKat = ({ navigation }) => {
         <View style={Styles.productContainer}>
           <Image
             style={Styles.productImage}
-            source={require('./Product-Images/KitKat.jpg')}
+            source={require('./Product-Images/aftereight.jpg')}
           />
           <View style={Styles.productTextContainer}>
             <Text style={Styles.productTextHeaders}>
@@ -41,4 +41,4 @@ const KitKat = ({ navigation }) => {
   );
 };
 
-export default KitKat;
+export default AfterEight;
