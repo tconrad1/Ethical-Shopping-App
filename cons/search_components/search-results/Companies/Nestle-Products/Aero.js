@@ -15,7 +15,7 @@ const Aero = ({ navigation }) => {
         <View style={Styles.productContainer}>
           <Image
             style={Styles.productImage}
-            source={require('./Product-Images/aero.jpg')}
+            source={require('./Product-Images/Aero.png')}
           />
           <View style={Styles.productTextContainer}>
             <Text style={Styles.productTextHeaders}>

@@ -1,6 +1,6 @@
 //SearchResultsScreen.js
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 
 import Drumstick from './Companies/Nestle-Products/Drumstick';
 import KitKat from './Companies/Nestle-Products/KitKat'
@@ -12,16 +12,17 @@ import OhHenry from './Companies/Nestle-Products/OhHenry';
 import Rolo from './Companies/Nestle-Products/Rolo';
 import { Styles } from './Styles';
 import equalish from '../TomSearchBar';
+import SearchBar from '../BeasSearchBar';
 
 const productArray = [
-{name: 'Drumstick', brand: 'nestle', component: Drumstick},
-{name: 'KitKat', brand: 'nestle', component: KitKat},
-{name: 'Aero', brand: 'nestle', component: Aero},
-{name: 'After Eight', brand: 'nestle', component: AfterEight},
-{name: 'Butterfinger', brand: 'nestle', component: Butterfinger},
-{name: 'Goobers', brand: 'nestle', component: Goobers},
-{name: 'OhHenry', brand: 'nestle', component: OhHenry},
-{name: 'Rolo', brand: 'nestle', component: Rolo},
+{name: 'Aero', brand: 'nestle', category: 'candy', component: Aero},
+{name: 'After Eight', brand: 'nestle', category: 'candy', component: AfterEight},
+{name: 'Butterfinger', brand: 'nestle', category: 'candy', component: Butterfinger},
+{name: 'Drumstick', brand: 'nestle', category: 'ice cream', component: Drumstick},
+{name: 'Goobers', brand: 'nestle', category: 'candy', component: Goobers},
+{name: 'KitKat', brand: 'nestle', category: 'candy', component: KitKat},
+{name: 'OhHenry', brand: 'nestle', category: 'candy', component: OhHenry},
+{name: 'Rolo', brand: 'nestle', category: 'candy', component: Rolo},
 ]
 
 // ['After Eight','nestle','After Eight.js'], 
@@ -45,26 +46,47 @@ const SearchResultsScreen = (props) => {
 
   if (!searchEntry) {
     return (
-      <View style = {Styles.searchResultsScreen}>
-        <Text>Error: No search entry provided</Text>
-      </View>
+        <View style = {Styles.searchResultsScreen}>
+          <SearchBar />
+          <Text style={Styles.searchResultsText}>Error: No search entry provided</Text>
+        </View>
     );
   }
 
   const searchResults = getSearchResults(searchEntry);
 
   return (
-    <View style = {Styles.searchResultsScreen}>
-      <Text style = {Styles.searchResultsText}>Results for: {searchEntry}</Text>
-        {searchResults.map((ResultComponent,index) => (<ResultComponent key = {index} navigation={navigation}/>)
-        )}
-    </View>
+    <SafeAreaView style={Styles.searchResultsScreen}>
+    <ScrollView>
+      <View >
+        <SearchBar />
+        <Text style={Styles.searchResultsText}>Results for: {searchEntry}</Text>
+        {searchResults.map((ResultComponent, index) => (
+          <ResultComponent key={index} navigation={navigation} />
+        ))}
+      </View>
+    </ScrollView>
+    </SafeAreaView>
   );
 };
 
 const getSearchResults = (searchEntry) => {
   if (!searchEntry) {
     return [];
+  }
+
+  if (searchEntry.toLowerCase() === 'nestle') {
+    return productArray.map((product) => product.component);
+  }
+
+  if (searchEntry.toLowerCase() === 'candy') {
+    const candyProducts = productArray.filter((product) => product.category === 'candy').map((product) => product.component);
+    return candyProducts;
+  }
+
+  if (searchEntry.toLowerCase() === 'ice cream') {
+    const iceCreamProducts = productArray.filter((product) => product.category === 'ice cream').map((product) => product.component);
+    return iceCreamProducts;
   }
 
  let i = 0;

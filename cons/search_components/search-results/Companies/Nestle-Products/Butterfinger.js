@@ -15,8 +15,7 @@ const Butterfinger = ({ navigation }) => {
         <View style={Styles.productContainer}>
           <Image
             style={Styles.productImage}
-            source={require('./Product-Images/aftereight.jpg')}
-            //ADD BUTTERGINGER IMAGE & CHANGE IMAGE TO BUTTERFINGER
+            source={require('./Product-Images/Butterfinger.png')}
           />
           <View style={Styles.productTextContainer}>
             <Text style={Styles.productTextHeaders}>

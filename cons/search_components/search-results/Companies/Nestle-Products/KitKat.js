@@ -15,7 +15,7 @@ const KitKat = ({ navigation }) => {
         <View style={Styles.productContainer}>
           <Image
             style={Styles.productImage}
-            source={require('./Product-Images/KitKat.jpg')}
+            source={require('./Product-Images/KitKat.png')}
           />
           <View style={Styles.productTextContainer}>
             <Text style={Styles.productTextHeaders}>

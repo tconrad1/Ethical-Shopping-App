@@ -76,7 +76,8 @@ export const Styles = StyleSheet.create ({
       width: 372,
       height: 150,
       borderRadius: 15,
-      marginLeft: 20
+      marginLeft: 20,
+      marginBottom: 15
     },
     productImage: {
       width: 150,
@@ -109,8 +110,10 @@ export const Styles = StyleSheet.create ({
     },
     searchResultsText: {
       fontSize: 20,
-      marginTop: 10,
-      marginBottom: 10,
+      fontWeight: 'bold',
+      color: '#00072D',
+      marginTop: 15,
+      marginBottom: 15,
       marginLeft: 20
     },
     infoScreenBG: {

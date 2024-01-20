@@ -15,7 +15,7 @@ const AfterEight = ({ navigation }) => {
         <View style={Styles.productContainer}>
           <Image
             style={Styles.productImage}
-            source={require('./Product-Images/aftereight.jpg')}
+            source={require('./Product-Images/AfterEight.png')}
           />
           <View style={Styles.productTextContainer}>
             <Text style={Styles.productTextHeaders}>
