@@ -16,7 +16,6 @@ export const Styles = StyleSheet.create ({
    },
 
    label: {
-    fontStyle: 'italic',
     color: '#00072D',
     fontSize: 20,
     padding: 10,
@@ -26,7 +25,9 @@ export const Styles = StyleSheet.create ({
    smallText: {
       fontSize: 17,
       padding: 10,
-      textAlign: 'center'
+      textAlign: 'center',
+      color: '#00072D',
+      fontStyle: 'italic'
    },
 
    errorText: {
@@ -60,12 +61,25 @@ export const Styles = StyleSheet.create ({
       padding: 7
    },
 
+   textAlign: {
+      textAlign: 'center'
+   },
+
+   titleBox: {
+      backgroundColor: '#A6C0E2',
+      width: 375,
+      height: 100,
+      padding: 10,
+      borderRadius: 30
+   },
+
    // for tom start screen
    appTitle: {
       fontSize: 50,
       fontStyle:'italic',
       fontWeight: 'bold', 
-      color: "#2963AE",
+      // color: "#2963AE",
+      color: "#00072D",
       textDecorationLine: 'underline'
    },
 
