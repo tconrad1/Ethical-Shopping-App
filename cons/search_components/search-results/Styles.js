@@ -62,5 +62,49 @@ export const Styles = StyleSheet.create ({
       backgroundColor: '#2963AE',
       width: 450,
       height: 87,
-    }, 
+    },
+    searchResultsScreen: {
+      backgroundColor: '#A6C0E2',
+      flex: 1
+    },
+    productAssembler: {
+      flexDirection: 'row'
+    },
+    productContainer: {
+      backgroundColor: '#F8F0EC',
+      flexDirection: 'row',
+      width: 372,
+      height: 150,
+      borderRadius: 15,
+      marginLeft: 20
+    },
+    productImage: {
+      width: 150,
+      height: 150,
+      marginLeft: 15
+    },
+    productTextContainer: {
+      marginLeft: 10,
+      marginTop: 10
+    },
+    productTextHeaders: {
+      fontWeight: 'bold',
+      fontSize: 20,
+      color: '#3B3B3B',
+    },
+    productTextText: {
+      fontStyle: 'italic',
+      fontSize: 15,
+      color: '#3B3B3B',
+    },
+    productUnethical: {
+      fontStyle: 'italic',
+      fontSize: 15,
+      color: 'red',
+    },
+    productEthical: {
+      fontStyle: 'italic',
+      fontSize: 15,
+      color: 'green',
+    }
 })

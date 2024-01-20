@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import SearchBar from '../BeasSearchBar.js';
 import SearchResultsScreen from './SearchResultsScreen.js';
+import NestleInfoScreen from './Companies/Nestle-Products/NestleInfoScreen.js';
 import News from '../News.js';
 import { Styles } from './Styles';
 
@@ -29,8 +30,12 @@ export default function App() {
             </SafeAreaView>
           )}
         </Stack.Screen>
-        <Stack.Screen name="SearchResultsScreen" component={SearchResultsScreen} />
-        {/* Add other screens if needed */}
+        <Stack.Screen 
+          name="SearchResultsScreen" 
+          component={SearchResultsScreen}
+          options={({navigation}) => ({navigation})}
+        />
+        <Stack.Screen name="NestleInfoScreen" component={NestleInfoScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

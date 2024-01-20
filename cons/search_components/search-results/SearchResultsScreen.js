@@ -2,12 +2,16 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const SearchResultsScreen = ({ route }) => {
+import Drumstick from './Companies/Nestle-Products/Drumstick';
+import { Styles } from './Styles';
+
+const SearchResultsScreen = (props) => {
+  const { route, navigation } = props;
   const { searchEntry } = route.params;
 
   if (!searchEntry) {
     return (
-      <View>
+      <View style = {Styles.searchResultsScreen}>
         <Text>Error: No search entry provided</Text>
       </View>
     );
@@ -16,10 +20,10 @@ const SearchResultsScreen = ({ route }) => {
   const searchResults = getSearchResults(searchEntry);
 
   return (
-    <View>
+    <View style = {Styles.searchResultsScreen}>
       <Text>Results for: {searchEntry}</Text>
-      {searchResults.map((result, index) => (
-        <Text key={index}>{result}</Text>
+      {searchResults.map((ResultComponent, index) => (
+        <ResultComponent key={index} navigation={navigation} />
       ))}
     </View>
   );
@@ -32,9 +36,7 @@ const getSearchResults = (searchEntry) => {
 
   if (searchEntry.toLowerCase() === 'nestle') {
     return [
-      'Result 1',
-      'Result 2',
-      'Result 3',
+      Drumstick
     ];
   }
 
