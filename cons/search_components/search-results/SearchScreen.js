@@ -16,7 +16,7 @@ export default function App() {
   return (
     <NavigationContainer independent={true}>
       <Stack.Navigator>
-        <Stack.Screen name="SearchScreen">
+        <Stack.Screen name="SearchScreen" options={{headerShown:false}} >
           {() => (
             <SafeAreaView style={{ flex: 1 }}>
               <ScrollView>
@@ -33,7 +33,8 @@ export default function App() {
         <Stack.Screen 
           name="SearchResultsScreen" 
           component={SearchResultsScreen}
-          options={({navigation}) => ({navigation})}
+          options={({navigation}) => ({navigation}, {headerShown:false})
+          }
         />
         <Stack.Screen name="NestleInfoScreen" component={NestleInfoScreen} />
       </Stack.Navigator>

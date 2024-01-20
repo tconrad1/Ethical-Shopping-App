@@ -100,7 +100,7 @@ function StartScreen({navigation}: {navigation :StartScreenNavigationProp}){
       <TouchableOpacity
         style={Styles.buttonStyle}
         onPress={() =>
-          navigation.navigate('MainScreen')
+          navigation.navigate('Search')
         }
       >
         <Text style={Styles.buttonText}>Product Info</Text>

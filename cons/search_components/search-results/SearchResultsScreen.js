@@ -61,7 +61,7 @@ const getSearchResults = (searchEntry) => {
 
  let i = 0;
     while (i < productArray.length) {
-      if ((productArray[i].name.toLowerCase() === searchEntry.toLowerCase())){
+      if ((productArray[i].name.toLowerCase() === searchEntry.toLowerCase() || equalish(productArray[i].name,searchEntry))){
         return [productArray[i].component];
         break;
       }
