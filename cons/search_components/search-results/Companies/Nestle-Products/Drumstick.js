@@ -15,7 +15,7 @@ const Drumstick = ({ navigation }) => {
         <View style={Styles.productContainer}>
           <Image
             style={Styles.productImage}
-            source={require('/projects/reactnative/Ethical-Shopping-App/cons/search_components/Images/Drumstick.png')}
+            source={require('./Product-Images/Drumstick.png')}
           />
           <View style={Styles.productTextContainer}>
             <Text style={Styles.productTextHeaders}>
