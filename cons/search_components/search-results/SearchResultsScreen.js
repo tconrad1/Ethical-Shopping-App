@@ -48,7 +48,7 @@ const SearchResultsScreen = (props) => {
   return (
     <View style = {Styles.searchResultsScreen}>
       <Text>Results for: {searchEntry}</Text>
-        {searchResults.map((Component,index) => (<Component key = {index} />)
+        {searchResults.map((ResultComponent,index) => (<ResultComponent key = {index} navigation={navigation}/>)
         )}
     </View>
   );
