@@ -6,14 +6,22 @@ import Drumstick from './Companies/Nestle-Products/Drumstick';
 import KitKat from './Companies/Nestle-Products/KitKat'
 import Aero from './Companies/Nestle-Products/Aero'
 import AfterEight from './Companies/Nestle-Products/AfterEight';
+import Butterfinger from './Companies/Nestle-Products/Butterfinger';
+import Goobers from './Companies/Nestle-Products/Goobers';
+import OhHenry from './Companies/Nestle-Products/OhHenry';
+import Rolo from './Companies/Nestle-Products/Rolo';
 import { Styles } from './Styles';
 import equalish from '../TomSearchBar';
 
 const productArray = [
-{name: 'Drumstick',brand: 'nestle', component: Drumstick},
+{name: 'Drumstick', brand: 'nestle', component: Drumstick},
 {name: 'KitKat', brand: 'nestle', component: KitKat},
-{name: 'Aero',brand: 'nestle', component: Aero},
-{name: 'After Eight',brand: 'nestle', component: AfterEight},
+{name: 'Aero', brand: 'nestle', component: Aero},
+{name: 'After Eight', brand: 'nestle', component: AfterEight},
+{name: 'Butterfinger', brand: 'nestle', component: Butterfinger},
+{name: 'Goobers', brand: 'nestle', component: Goobers},
+{name: 'OhHenry', brand: 'nestle', component: OhHenry},
+{name: 'Rolo', brand: 'nestle', component: Rolo},
 ]
 
 // ['After Eight','nestle','After Eight.js'], 

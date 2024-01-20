@@ -4,9 +4,16 @@ import { View, Text } from 'react-native';
 
 import { Styles } from '../../Styles';
 import AltDrumstick from './Alternatives/AltDrumstick';
+import AltKitKat from './Alternatives/AltKitKat';
+import AltAero from './Alternatives/AltAero';
+import AltAfterEight from './Alternatives/AltAfterEight';
+import AltButterfinger from './Alternatives/AltButterfinger';
+import AltGoobers from './Alternatives/AltGoobers';
+import AltOhHenry from './Alternatives/AltOhHenry';
+import AltRolo from './Alternatives/AltRolo';
 
-const NestleInfoScreen = ({ route }) => {
-  const { searchEntry } = route.params;
+const NestleInfoScreen = ({ route, navigation }) => {
+  const { product } = route.params;
 
   return (
     <View style = {Styles.infoScreenBG}>
@@ -25,7 +32,14 @@ const NestleInfoScreen = ({ route }) => {
           <Text style = {Styles.productDecision}>
             It is advised to keep this company out of your basket!
           </Text>
-          <AltDrumstick/>
+          {product === 'Drumstick' && <AltDrumstick />}
+          {product === 'KitKat' && <AltKitKat />}
+          {product === 'Aero' && <AltAero />}
+          {product === 'AfterEight' && <AltAfterEight />}
+          {product === 'Butterfinger' && <AltButterfinger />}
+          {product === 'Goobers' && <AltGoobers />}
+          {product === 'OhHenry' && <AltOhHenry />}
+          {product === 'Rolo' && <AltRolo />}
       </View>
     </View>
   );

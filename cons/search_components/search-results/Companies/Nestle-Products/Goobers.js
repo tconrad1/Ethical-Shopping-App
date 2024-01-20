@@ -6,7 +6,7 @@ import { Styles } from '../../Styles';
 
 const Goobers = ({ navigation }) => {
     const handleProductPress = () => {
-      navigation.navigate('NestleInfoScreen', { searchEntry: 'Nestle' });
+      navigation.navigate('NestleInfoScreen', { product: 'Goobers' });
     };
 
   return (

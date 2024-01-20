@@ -1,12 +1,12 @@
-// OhHenry.js
+// Butterfinger.js
 import React from 'react';
 import { View, TouchableOpacity, Text, Image } from 'react-native';
 
 import { Styles } from '../../Styles';
 
-const OhHenry = ({ navigation }) => {
+const Butterfinger = ({ navigation }) => {
     const handleProductPress = () => {
-      navigation.navigate('NestleInfoScreen', { product: 'OhHenry' });
+      navigation.navigate('NestleInfoScreen', { product: 'Butterfinger' });
     };
 
   return (
@@ -15,7 +15,8 @@ const OhHenry = ({ navigation }) => {
         <View style={Styles.productContainer}>
           <Image
             style={Styles.productImage}
-            source={require('./Product-Images/OhHenry.png')}
+            source={require('./Product-Images/aftereight.jpg')}
+            //ADD BUTTERGINGER IMAGE & CHANGE IMAGE TO BUTTERFINGER
           />
           <View style={Styles.productTextContainer}>
             <Text style={Styles.productTextHeaders}>
@@ -41,4 +42,4 @@ const OhHenry = ({ navigation }) => {
   );
 };
 
-export default OhHenry;
+export default Butterfinger;

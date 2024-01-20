@@ -6,7 +6,7 @@ import { Styles } from '../../Styles';
 
 const AfterEight = ({ navigation }) => {
     const handleProductPress = () => {
-      navigation.navigate('NestleInfoScreen', { searchEntry: 'Nestle' });
+      navigation.navigate('NestleInfoScreen', { product: 'AfterEight' });
     };
 
   return (
