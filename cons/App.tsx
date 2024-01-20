@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as React from 'react-native';
 
-import {Text, View, TouchableOpacity, TextInput} from 'react-native';
+import {Text, View, TouchableOpacity, Image} from 'react-native';
 
 import {NavigationContainer, RouteProp} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -83,28 +83,28 @@ export default function App(this: any) {
 function StartScreen({navigation}: {navigation :StartScreenNavigationProp}){
   return (
     <View style = {Styles.startContainer}>
-      <Text style= {Styles.label} > 
-
-        <Text style ={Styles.appTitle} >Cons</Text>
-        {' '} for Consumption {'\n'}
-
-        <Text style= {Styles.smallText }> Your App for Ethical Consumption</Text>
-
-        {'\n'}
-        {'\n'}
-        {'\n'}
-    </Text>
-
+       
+      <View style={Styles.titleBox}>
+        <Text style={Styles.textAlign}>
+          <Text style ={Styles.appTitle} >Cons</Text>
+          <Text style={Styles.label}> {' '}  for Consumers  {'\n'}</Text>
+        </Text>
+      </View>
+        
       <WelcomeText/>
-      
+
+
       <TouchableOpacity
-        style={Styles.buttonStyle}
         onPress={() =>
           navigation.navigate('Search')
         }
+        style = {Styles.startButton}
       >
-        <Text style={Styles.buttonText}>Product Info</Text>
-      </TouchableOpacity>
+        <Image 
+          source = {require('./search_components/Images/startButton.png')}
+          style = {Styles.startImage}/>
+        </TouchableOpacity>
+
     </View>
   );
 };
@@ -112,14 +112,7 @@ function StartScreen({navigation}: {navigation :StartScreenNavigationProp}){
 function MainScreen({ navigation }: { navigation: MainScreenNavigationProp }) {
   return (
     <View style={Styles.flexContainer}>
-    
-      
-      
-      <Text> {'\n'}{'\n'}{'\n'} </Text>
-     
- 
-     
-      <Text> {'\n'}{'\n'} </Text>
+      <Text> {'\n'}{'\n'}{'\n'}{'\n'}{'\n'} </Text>
 
       <TouchableOpacity
         style={Styles.buttonStyle}
@@ -142,8 +135,7 @@ function MainScreen({ navigation }: { navigation: MainScreenNavigationProp }) {
 export const WelcomeText = () => {
   return (
     <View>
-  <Text style={Styles.label}>  An App by group 2
-  </Text>
+      <Text style={Styles.titleSubtext}> {'\n'}An App by Group 2 </Text>
     </View>
   )};
 

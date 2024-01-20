@@ -12,11 +12,9 @@ export const Styles = StyleSheet.create ({
       alignItems: 'center', 
       backgroundColor: '#F8F0EC',
       flex: 1,
-      justifyContent: 'center'
    },
 
    label: {
-    fontStyle: 'italic',
     color: '#00072D',
     fontSize: 20,
     padding: 10,
@@ -26,7 +24,9 @@ export const Styles = StyleSheet.create ({
    smallText: {
       fontSize: 17,
       padding: 10,
-      textAlign: 'center'
+      textAlign: 'center',
+      color: '#00072D',
+      fontStyle: 'italic'
    },
 
    errorText: {
@@ -60,12 +60,45 @@ export const Styles = StyleSheet.create ({
       padding: 7
    },
 
+   textAlign: {
+      textAlign: 'center'
+   },
+
+   titleBox: {
+      backgroundColor: '#A6C0E2',
+      width: 390,
+      height: 100,
+      padding: 5,
+      borderRadius: 30,
+      top: 50,
+   },
+
+   startImage: {
+      flex: 1,
+      width: 350,
+      height: 350,
+      resizeMode: 'contain'
+   },
+
+   startButton: {
+      position: 'absolute',
+      bottom: 200
+   },
+
+   titleSubtext: {
+      top: 35,
+      fontSize: 17,
+      textAlign: 'center',
+      color: '#00072D',
+      fontStyle: 'italic'
+   },
+
    // for tom start screen
    appTitle: {
-      fontSize: 50,
+      fontSize: 60,
       fontStyle:'italic',
       fontWeight: 'bold', 
-      color: "#2963AE",
+      color: "#00072D",
       textDecorationLine: 'underline'
    },
 
