@@ -30,7 +30,7 @@ export default function News() {
                         onPress = {() => {
                             Linking.openURL('https://www.theguardian.com/global-development/2021/feb/12/mars-nestle-and-hershey-to-face-landmark-child-slavery-lawsuit-in-us');
                         }}>
-                        Add Other Related News
+                        Police checks during an operation to rescue children from child traffickers in Aboisso, Ivory Coast.
                     </Text>
                     <View style = {styles.Separator2}/>
                     <Image
@@ -39,9 +39,9 @@ export default function News() {
                     <Text
                         style = {[styles.NewsText, styles.hyperlinkStyle]}
                         onPress = {() => {
-                            Linking.openURL('https://www.theguardian.com/global-development/2021/feb/12/mars-nestle-and-hershey-to-face-landmark-child-slavery-lawsuit-in-us');
+                            Linking.openURL('https://cocobod.gh/pages/cocoa');
                         }}>
-                        Add Other Related News
+                        A sign warns against child labour in cocoa production in Ghana
                     </Text>
                     <View style = {styles.Separator2}/>
                 </View>
