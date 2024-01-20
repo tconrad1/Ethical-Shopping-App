@@ -86,7 +86,7 @@ function StartScreen({navigation}: {navigation :StartScreenNavigationProp}){
        
       <View style={Styles.titleBox}>
         <Text style={Styles.textAlign}>
-          <Text style ={Styles.appTitle} >Cons</Text>
+          <Text style ={Styles.appTitle} >cons</Text>
           <Text style={Styles.label}> {' '}  for Consumers  {'\n'}</Text>
         </Text>
       </View>

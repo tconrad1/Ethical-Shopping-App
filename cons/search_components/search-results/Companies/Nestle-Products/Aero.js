@@ -1,4 +1,4 @@
-// Drumstick.js
+// Aero.js
 import React from 'react';
 import { View, TouchableOpacity, Text, Image } from 'react-native';
 

@@ -1,4 +1,4 @@
-// Drumstick.js
+// Kitkat.js
 import React from 'react';
 import { View, TouchableOpacity, Text, Image } from 'react-native';
 

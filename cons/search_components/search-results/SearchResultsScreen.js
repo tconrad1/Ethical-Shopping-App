@@ -1,6 +1,6 @@
 //SearchResultsScreen.js
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 import Drumstick from './Companies/Nestle-Products/Drumstick';
 import KitKat from './Companies/Nestle-Products/KitKat'
@@ -47,7 +47,7 @@ const SearchResultsScreen = (props) => {
 
   return (
     <View style = {Styles.searchResultsScreen}>
-      <Text>Results for: {searchEntry}</Text>
+      <Text style = {Styles.searchResultsText}>Results for: {searchEntry}</Text>
         {searchResults.map((ResultComponent,index) => (<ResultComponent key = {index} navigation={navigation}/>)
         )}
     </View>
