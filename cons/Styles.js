@@ -12,7 +12,6 @@ export const Styles = StyleSheet.create ({
       alignItems: 'center', 
       backgroundColor: '#F8F0EC',
       flex: 1,
-      justifyContent: 'center'
    },
 
    label: {
@@ -67,18 +66,38 @@ export const Styles = StyleSheet.create ({
 
    titleBox: {
       backgroundColor: '#A6C0E2',
-      width: 375,
+      width: 390,
       height: 100,
-      padding: 10,
-      borderRadius: 30
+      padding: 5,
+      borderRadius: 30,
+      top: 50,
+   },
+
+   startImage: {
+      flex: 1,
+      width: 350,
+      height: 350,
+      resizeMode: 'contain'
+   },
+
+   startButton: {
+      position: 'absolute',
+      bottom: 200
+   },
+
+   titleSubtext: {
+      top: 35,
+      fontSize: 17,
+      textAlign: 'center',
+      color: '#00072D',
+      fontStyle: 'italic'
    },
 
    // for tom start screen
    appTitle: {
-      fontSize: 50,
+      fontSize: 60,
       fontStyle:'italic',
       fontWeight: 'bold', 
-      // color: "#2963AE",
       color: "#00072D",
       textDecorationLine: 'underline'
    },
