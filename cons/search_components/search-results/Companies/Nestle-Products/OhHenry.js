@@ -1,10 +1,10 @@
-// Rolo.js
+// OhHenry.js
 import React from 'react';
 import { View, TouchableOpacity, Text, Image } from 'react-native';
 
 import { Styles } from '../../Styles';
 
-const Rolo = ({ navigation }) => {
+const OhHenry = ({ navigation }) => {
     const handleProductPress = () => {
       navigation.navigate('NestleInfoScreen', { searchEntry: 'Nestle' });
     };
@@ -15,7 +15,7 @@ const Rolo = ({ navigation }) => {
         <View style={Styles.productContainer}>
           <Image
             style={Styles.productImage}
-            source={require('./Product-Images/Rolo.png')}
+            source={require('./Product-Images/OhHenry.png')}
           />
           <View style={Styles.productTextContainer}>
             <Text style={Styles.productTextHeaders}>
@@ -41,4 +41,4 @@ const Rolo = ({ navigation }) => {
   );
 };
 
-export default Rolo;
+export default OhHenry;
