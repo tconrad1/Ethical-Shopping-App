@@ -58,11 +58,6 @@ export const Styles = StyleSheet.create ({
       backgroundColor: '#F8F0EC',
       flex: 1,
     },
-    searchTopBar: {
-      backgroundColor: '#2963AE',
-      width: 450,
-      height: 87,
-    },
     searchResultsScreen: {
       backgroundColor: '#A6C0E2',
       flex: 1
@@ -102,6 +97,11 @@ export const Styles = StyleSheet.create ({
       fontStyle: 'italic',
       fontSize: 15,
       color: 'red',
+    },
+    productQuestionable: {
+      fontStyle: 'italic',
+      fontSize: 15,
+      color: 'orange',
     },
     productEthical: {
       fontStyle: 'italic',
@@ -147,6 +147,12 @@ export const Styles = StyleSheet.create ({
     infoUnethical: {
       fontSize: 25,
       color: '#C21807',
+      marginRight: 20,
+      marginTop: 12,
+    },
+    infoQuestionable: {
+      fontSize: 25,
+      color: '#FF6E00',
       marginRight: 20,
       marginTop: 12,
     },

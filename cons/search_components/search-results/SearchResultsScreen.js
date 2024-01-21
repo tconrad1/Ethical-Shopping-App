@@ -10,6 +10,9 @@ import Butterfinger from './Companies/Nestle-Products/Butterfinger';
 import Goobers from './Companies/Nestle-Products/Goobers';
 import OhHenry from './Companies/Nestle-Products/OhHenry';
 import Rolo from './Companies/Nestle-Products/Rolo';
+
+import HoldTheCone from './Companies/TraderJoes/HoldTheCone';
+
 import { Styles } from './Styles';
 import equalish from '../TomSearchBar';
 import SearchBar from '../BeasSearchBar';
@@ -23,6 +26,8 @@ const productArray = [
 {name: 'KitKat', brand: 'nestle', category: 'candy', component: KitKat},
 {name: 'OhHenry', brand: 'nestle', category: 'candy', component: OhHenry},
 {name: 'Rolo', brand: 'nestle', category: 'candy', component: Rolo},
+
+{name: 'Hold The Cone', brand: 'trader joes', category: 'ice cream', component: HoldTheCone},
 ]
 
 // ['After Eight','nestle','After Eight.js'], 
@@ -76,16 +81,22 @@ const getSearchResults = (searchEntry) => {
   }
 
   if (searchEntry.toLowerCase() === 'nestle') {
-    return productArray.map((product) => product.component);
+    const nestleProducts = productArray.filter((product) => product.brand.toLowerCase() === 'nestle').map((product) => product.component);
+    return nestleProducts;
+  }
+
+  if (searchEntry.toLowerCase() === 'trader joes') {
+    const nestleProducts = productArray.filter((product) => product.brand.toLowerCase() === 'trader joes').map((product) => product.component);
+    return nestleProducts;
   }
 
   if (searchEntry.toLowerCase() === 'candy') {
-    const candyProducts = productArray.filter((product) => product.category === 'candy').map((product) => product.component);
+    const candyProducts = productArray.filter((product) => product.category.toLowerCase() === 'candy').map((product) => product.component);
     return candyProducts;
   }
 
   if (searchEntry.toLowerCase() === 'ice cream') {
-    const iceCreamProducts = productArray.filter((product) => product.category === 'ice cream').map((product) => product.component);
+    const iceCreamProducts = productArray.filter((product) => product.category.toLowerCase() === 'ice cream').map((product) => product.component);
     return iceCreamProducts;
   }
 

@@ -12,6 +12,7 @@ export default function SearchBar() {
   };
 
   return (
+    <View style = {styles.searchBarContainer}>
     <View style = {styles.assembler}>
       <View style = {styles.SearchBar}>
         <TextInput
@@ -30,10 +31,16 @@ export default function SearchBar() {
           source = {require('./Images/Search-Icon.png')} />
       </TouchableOpacity>
     </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  searchBarContainer: {
+    backgroundColor: '#2963AE',
+    width: 450,
+    height: 87
+  },
   assembler: {
     flexDirection: 'row',
     marginTop: 20
